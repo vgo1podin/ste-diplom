@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЭкоТрудСервис - Экспертная оценка и улучшение условий труда</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3B82F6',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+<!-- Верхнее меню -->
+<header class="fixed w-full bg-gray-900 shadow-md z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">ЭкоТрудСервис</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="font-medium text-primary border-b-2 border-primary">Главная</a>
+<a href="#services" class="font-medium text-gray-300 hover:text-primary transition-colors">Услуги</a>
+<a href="#about" class="font-medium text-gray-300 hover:text-primary transition-colors">О компании</a>
+<a href="#cases" class="font-medium text-gray-300 hover:text-primary transition-colors">Наши проекты</a>
+<a href="#blog" class="font-medium text-gray-300 hover:text-primary transition-colors">Блог</a>
+<a href="#contacts" class="font-medium text-gray-300 hover:text-primary transition-colors">Контакты</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="tel:+79340808606" class="hidden md:flex items-center text-gray-300 hover:text-primary">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 mr-2">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span>+7 (934) 080-86-06</span>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</div>
+</div>
+<!-- Мобильное меню -->
+<div id="mobile-menu" class="hidden md:hidden bg-gray-900 w-full py-4 shadow-lg absolute">
+<div class="container mx-auto px-4 flex flex-col space-y-4">
+<a href="#" class="font-medium text-primary">Главная</a>
+<a href="#services" class="font-medium text-gray-700">Услуги</a>
+<a href="#about" class="font-medium text-gray-700">О компании</a>
+<a href="#cases" class="font-medium text-gray-700">Наши проекты</a>
+<a href="#blog" class="font-medium text-gray-700">Блог</a>
+<a href="#contacts" class="font-medium text-gray-700">Контакты</a>
+<a href="tel:+74951234567" class="flex items-center text-gray-700">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 mr-2">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span>+7 (495) 123-45-67</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Hero секция -->
+<section class="w-full relative pt-24 md:pt-0" style="background-image: url('../images/my-local-image.jpg'); background-size: cover; background-position: center; height: 100vh; min-height: 700px;">
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10">
+<div class="w-full md:w-1/2 py-12">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-400">Безопасность труда — <span class="text-primary">наша забота</span></h1>
+<p class="text-lg md:text-xl mb-8 text-gray-400">Мы помогаем предприятиям создавать безопасные условия труда, соответствующие всем нормам и стандартам. Наши эксперты проводят комплексную оценку и разрабатывают индивидуальные решения для вашего бизнеса.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#services" class="bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap flex items-center justify-center">
+<span>Наши услуги</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+<a href="#contacts" class="border-2 border-primary text-primary py-3 px-6 rounded-button font-medium hover:bg-primary/5 transition-colors whitespace-nowrap flex items-center justify-center">
+<span>Связаться с нами</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Секция с преимуществами -->
+<section class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-gray-900 p-8 rounded shadow-md flex flex-col items-center text-center">
+<div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Сертифицированные эксперты</h3>
+<p class="text-gray-300">Наши специалисты имеют все необходимые сертификаты и многолетний опыт в сфере охраны труда</p>
+</div>
+<div class="bg-gray-900 p-8 rounded shadow-md flex flex-col items-center text-center">
+<div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-file-list-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Комплексный подход</h3>
+<p class="text-gray-300">Мы проводим полный анализ условий труда и разрабатываем индивидуальные решения для каждого клиента</p>
+</div>
+<div class="bg-gray-900 p-8 rounded shadow-md flex flex-col items-center text-center">
+<div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-time-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Оперативность</h3>
+<p class="text-gray-300">Выполняем работы в кратчайшие сроки без потери качества, соблюдая все установленные дедлайны</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Секция услуг -->
+<section id="services" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl text-primary font-bold mb-4">Наши услуги</h2>
+<p class="text-gray-300 max-w-3xl mx-auto">Мы предлагаем полный спектр услуг по оценке и улучшению условий труда на предприятиях различных отраслей</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/1.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-search-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Специальная оценка условий труда</h3>
+<p class="text-gray-300 mb-4">Проводим комплексную оценку рабочих мест в соответствии с законодательством РФ. Выявляем вредные и опасные факторы, разрабатываем рекомендации.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/2.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-user-settings-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Обучение по охране труда</h3>
+<p class="text-gray-300 mb-4">Проводим обучение сотрудников и руководителей по вопросам охраны труда. Организуем тренинги, семинары и практические занятия.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/3.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-file-text-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Разработка документации</h3>
+<p class="text-gray-300 mb-4">Разрабатываем полный комплект документов по охране труда в соответствии с требованиями законодательства и спецификой вашего предприятия.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/4.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-alert-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Оценка профессиональных рисков</h3>
+<p class="text-gray-300 mb-4">Проводим идентификацию опасностей и оценку профессиональных рисков. Разрабатываем мероприятия по их снижению и контролю.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/5.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-check-double-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Аудит системы охраны труда</h3>
+<p class="text-gray-300 mb-4">Проводим независимую проверку системы охраны труда на соответствие требованиям законодательства. Выявляем недостатки и предлагаем решения.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="service-card bg-gray-800 rounded shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48" style="background-image: url('../images/our services/6.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4">
+<i class="ri-health-book-line text-primary text-xl"></i>
+</div>
+<h3 class="text-primary font-semibold mb-3">Производственный контроль</h3>
+<p class="text-gray-300 mb-4">Организуем и проводим производственный контроль за соблюдением санитарных правил и выполнением санитарно-противоэпидемических мероприятий.</p>
+<a href="../uslugi/uslugi.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="bg-primary text-white py-3 px-8 rounded-button font-medium hover:bg-primary/90 transition-colors inline-flex items-center whitespace-nowrap">
+<span>Все услуги</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- О компании -->
+<section id="about" class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-1/2">
+<h2 class="text-3xl text-primary font-bold mb-6">О нашей компании</h2>
+<p class="text-gray-300 mb-4">Компания «ЭкоТрудСервис» была основана в 2010 году группой профессионалов в области охраны труда. За 15 лет работы мы накопили богатый опыт и знания, которые позволяют нам эффективно решать задачи любой сложности.</p>
+<p class="text-gray-300 mb-6">Наша миссия — создание безопасных условий труда на предприятиях России. Мы помогаем бизнесу соответствовать требованиям законодательства и минимизировать риски, связанные с охраной труда.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-user-star-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">30+ экспертов</h4>
+<p class="text-gray-300 text-sm">в нашей команде</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-building-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">500+ клиентов</h4>
+<p class="text-gray-300 text-sm">доверяют нам</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-award-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">15 лет</h4>
+<p class="text-gray-300 text-sm">на рынке</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-map-pin-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">25 регионов</h4>
+<p class="text-gray-300 text-sm">география работы</p>
+</div>
+</div>
+</div>
+<a href="#" class="bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors inline-flex items-center whitespace-nowrap">
+<span>Подробнее о компании</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="w-full lg:w-1/2">
+<img src="../images/about the company/1.jpg" alt="Наша команда" class="rounded shadow-lg w-full h-auto">
+</div>
+</div>
+</div>
+</section>
+<!-- Кейсы -->
+<section id="cases" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl text-primary font-bold mb-4">Наши проекты</h2>
+<p class="text-gray-300 max-w-3xl mx-auto">Примеры успешно реализованных проектов по оценке и улучшению условий труда на предприятиях различных отраслей</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="case-card bg-gray-800 rounded shadow-md overflow-hidden relative group">
+<div class="h-64" style="background-image: url('../images/our projects/1.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full mb-3">Производство</span>
+<h3 class="text-primary font-semibold mb-2">ООО «ТехноПром»</h3>
+<p class="text-gray-300 mb-4">Комплексная оценка условий труда на производственных участках и внедрение системы управления охраной труда</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 text-sm">Апрель 2025</span>
+<a data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="case-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+<div class="text-center text-white p-6">
+<h3 class="text-primary font-semibold mb-2">ООО «ТехноПром»</h3>
+<p class="mb-4">Снижение уровня производственного травматизма на 78% за 6 месяцев после внедрения рекомендаций</p>
+<a href="../cases/cases.html" data-readdy="true" class="border-2 border-white text-white py-2 px-4 rounded-button font-medium hover:bg-white hover:text-primary transition-colors inline-block whitespace-nowrap">Смотреть кейс</a>
+</div>
+</div>
+</div>
+<div class="case-card bg-gray-800 rounded shadow-md overflow-hidden relative group">
+<div class="h-64" style="background-image: url('../images/our projects/2.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<span class="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full mb-3">Логистика</span>
+<h3 class="text-primary font-semibold mb-2">ЗАО «ЛогистикПлюс»</h3>
+<p class="text-gray-300 mb-4">Оценка профессиональных рисков и разработка мероприятий по их снижению в логистическом центре</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 text-sm">Март 2025</span>
+<a href="../cases/cases.html" data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="case-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+<div class="text-center text-white p-6">
+<h3 class="text-primary font-semibold mb-2">ЗАО «ЛогистикПлюс»</h3>
+<p class="mb-4">Внедрение системы контроля за соблюдением требований охраны труда повысило производительность на 23%</p>
+<a href="../cases/cases.html" data-readdy="true" class="border-2 border-white text-white py-2 px-4 rounded-button font-medium hover:bg-white hover:text-primary transition-colors inline-block whitespace-nowrap">Смотреть кейс</a>
+</div>
+</div>
+</div>
+<div class="case-card bg-gray-800 rounded shadow-md overflow-hidden relative group">
+<div class="h-64" style="background-image: url('../images/our projects/3.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full mb-3">IT-компания</span>
+<h3 class="text-primary font-semibold mb-2">ООО «ДиджиталСофт»</h3>
+<p class="text-gray-300 mb-4">Оценка эргономики рабочих мест и разработка рекомендаций по улучшению условий труда офисных сотрудников</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 text-sm">Февраль 2025</span>
+<a data-readdy="true" class="text-primary font-medium flex items-center hover:underline">
+<span>Подробнее</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="case-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+<div class="text-center text-white p-6">
+<h3 class="text-primary font-semibold mb-2">ООО «ДиджиталСофт»</h3>
+<p class="mb-4">Улучшение эргономики рабочих мест снизило количество больничных листов на 35% за год</p>
+<a href="../cases/cases.html" data-readdy="true" class="border-2 border-white text-white py-2 px-4 rounded-button font-medium hover:bg-white hover:text-primary transition-colors inline-block whitespace-nowrap">Смотреть кейс</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="../cases/cases.html" class="bg-primary text-white border-2 border-primary text-primary py-3 px-8 rounded-button font-medium hover:bg-primary/5 transition-colors inline-flex items-center whitespace-nowrap">
+<span>Все проекты</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Отзывы -->
+<section class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<div><a href="#otziv"><h2 class="text-3xl text-primary font-bold mb-4">Отзывы клиентов</h2></a></div>
+<p class="text-gray-300 max-w-3xl mx-auto">Что говорят о нас наши клиенты, которые уже оценили качество наших услуг</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="testimonial-card bg-gray-900 p-8 rounded shadow-md">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-user-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Александр Петров</h4>
+<p class="text-gray-300 text-sm">Директор по производству, ООО «ТехноПром»</p>
+</div>
+</div>
+<div class="flex mb-4">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<p class="text-gray-300 italic">"Благодаря профессиональной работе специалистов ЭкоТрудСервис нам удалось значительно улучшить условия труда на производстве и снизить уровень травматизма. Рекомендации были конкретными и реализуемыми, а сопровождение на всех этапах внедрения — бесценным."</p>
+</div>
+<div class="testimonial-card bg-gray-900 p-8 rounded shadow-md">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-user-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Елена Соколова</h4>
+<p class="text-gray-300 text-sm">HR-директор, ЗАО «ЛогистикПлюс»</p>
+</div>
+</div>
+<div class="flex mb-4">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<p class="text-gray-300 italic">"Сотрудничаем с ЭкоТрудСервис уже более 3 лет. За это время компания провела для нас специальную оценку условий труда, разработала всю необходимую документацию и обучила наших сотрудников. Всегда на связи, всегда готовы помочь. Отличные специалисты!"</p>
+</div>
+<div class="testimonial-card bg-gray-900 p-8 rounded shadow-md">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4">
+<i class="ri-user-line text-primary text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Дмитрий Новиков</h4>
+<p class="text-gray-300 text-sm">Генеральный директор, ООО «ДиджиталСофт»</p>
+</div>
+</div>
+<div class="flex mb-4">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-half-fill text-yellow-400"></i>
+</div>
+<p class="text-gray-300 italic">"Обратились в ЭкоТрудСервис для оценки эргономики рабочих мест в нашем офисе. Результат превзошел ожидания — сотрудники отмечают значительное улучшение условий труда, снизилось количество жалоб на боли в спине и шее. Рекомендую всем IT-компаниям!"</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Блог -->
+<section id="blog" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl text-primary font-bold mb-4">Наш блог</h2>
+<p class="text-gray-300 max-w-3xl mx-auto">Полезные статьи и новости в сфере охраны труда и безопасности на производстве</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-800 rounded shadow-md overflow-hidden">
+<div class="h-48" style="background-image: url('../images/blog/1.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-gray-500 text-sm">15 мая 2025</span>
+<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">Законодательство</span>
+</div>
+<h3 class="text-primary font-semibold mb-3">Изменения в законодательстве по охране труда в 2025 году</h3>
+<p class="text-gray-300 mb-4">Обзор ключевых изменений в нормативных актах по охране труда, которые вступают в силу в 2025 году. Что необходимо знать работодателям.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+<span>Читать статью</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="bg-gray-800 rounded shadow-md overflow-hidden">
+<div class="h-48" style="background-image: url('../images/blog/2.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-gray-500 text-sm">10 мая 2025</span>
+<span class="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Эргономика</span>
+</div>
+<h3 class="text-primary font-semibold mb-3">5 принципов эргономики рабочего места в офисе</h3>
+<p class="text-gray-300 mb-4">Как правильно организовать рабочее место в офисе, чтобы снизить нагрузку на опорно-двигательный аппарат и повысить продуктивность сотрудников.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+<span>Читать статью</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<div class="bg-gray-800 rounded shadow-md overflow-hidden">
+<div class="h-48" style="background-image: url('../images/blog/3.jpg'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-gray-500 text-sm">5 мая 2025</span>
+<span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full">Обучение</span>
+</div>
+<h3 class="text-primary font-semibold mb-3">Как организовать эффективное обучение по охране труда</h3>
+<p class="text-gray-300 mb-4">Современные методики обучения сотрудников правилам охраны труда. Практические рекомендации для специалистов по охране труда.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+<span>Читать статью</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="bg-primary text-white border-2 border-primary text-primary py-3 px-8 rounded-button font-medium hover:bg-primary/5 transition-colors inline-flex items-center whitespace-nowrap">
+<span>Все статьи</span>
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl text-primary font-bold mb-4">Часто задаваемые вопросы</h2>
+<p class="text-gray-300 max-w-3xl mx-auto">Ответы на популярные вопросы о наших услугах и процессе работы</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="mb-6 bg-gray-900 rounded shadow-md overflow-hidden" x-data="{open: false}">
+<div class="p-6 cursor-pointer flex justify-between items-center" onclick="this.parentElement.classList.toggle('active'); this.nextElementSibling.classList.toggle('hidden')">
+<h3 class="font-semibold text-lg text-primary">Как часто нужно проводить специальную оценку условий труда?</h3>
+<i class="ri-arrow-down-s-line text-primary text-primary transition-transform duration-300"></i>
+</div>
+<div class="p-6 pt-0 border-t hidden">
+<p class="text-gray-300">Согласно Федеральному закону №426-ФЗ, специальная оценка условий труда проводится не реже чем один раз в пять лет. Если рабочее место было аттестовано, то специальная оценка условий труда проводится по истечении срока действия имеющейся аттестации. Внеплановая специальная оценка проводится в случае изменения технологического процесса, состава применяемых материалов, после несчастных случаев на производстве и по предписанию государственного инспектора труда.</p>
+</div>
+</div>
+<div class="mb-6 bg-gray-900 rounded shadow-md overflow-hidden" x-data="{open: false}">
+<div class="p-6 cursor-pointer flex justify-between items-center" onclick="this.parentElement.classList.toggle('active'); this.nextElementSibling.classList.toggle('hidden')">
+<h3 class="font-semibold text-lg text-primary">Какие документы по охране труда должны быть на предприятии?</h3>
+<i class="ri-arrow-down-s-line text-primary text-primary transition-transform duration-300"></i>
+</div>
+<div class="p-6 pt-0 border-t hidden">
+<p class="text-gray-300">Основные документы по охране труда, которые должны быть на предприятии: положение о системе управления охраной труда, инструкции по охране труда для работников, программы обучения и инструктажей, журналы регистрации инструктажей, приказы о назначении ответственных лиц, результаты специальной оценки условий труда, перечень профессиональных рисков, план мероприятий по улучшению условий труда, личные карточки учета выдачи СИЗ и другие документы в зависимости от специфики предприятия.</p>
+</div>
+</div>
+<div class="mb-6 bg-gray-900 rounded shadow-md overflow-hidden" x-data="{open: false}">
+<div class="p-6 cursor-pointer flex justify-between items-center" onclick="this.parentElement.classList.toggle('active'); this.nextElementSibling.classList.toggle('hidden')">
+<h3 class="font-semibold text-lg text-primary">Кто должен проходить обучение по охране труда?</h3>
+<i class="ri-arrow-down-s-line text-primary text-primary transition-transform duration-300"></i>
+</div>
+<div class="p-6 pt-0 border-t hidden">
+<p class="text-gray-300">Обучение по охране труда должны проходить все работники организации, включая руководителей. Руководители организаций, специалисты по охране труда, члены комиссий по проверке знаний требований охраны труда проходят обучение в аккредитованных учебных центрах. Остальные работники проходят обучение непосредственно в организации по программам, разработанным на основе типовых. Периодичность обучения и проверки знаний требований охраны труда - не реже одного раза в три года.</p>
+</div>
+</div>
+<div class="mb-6 bg-gray-900 rounded shadow-md overflow-hidden" x-data="{open: false}">
+<div class="p-6 cursor-pointer flex justify-between items-center" onclick="this.parentElement.classList.toggle('active'); this.nextElementSibling.classList.toggle('hidden')">
+<h3 class="font-semibold text-lg text-primary">Что такое оценка профессиональных рисков и зачем она нужна?</h3>
+<i class="ri-arrow-down-s-line text-primary text-primary transition-transform duration-300"></i>
+</div>
+<div class="p-6 pt-0 border-t hidden">
+<p class="text-gray-300">Оценка профессиональных рисков — это процесс выявления опасностей, определения вероятности и тяжести возможного вреда здоровью работников. Она необходима для предотвращения производственного травматизма и профессиональных заболеваний. По результатам оценки разрабатываются мероприятия по снижению рисков. С 1 марта 2022 года оценка профессиональных рисков является обязательной для всех работодателей согласно новой редакции Трудового кодекса РФ.</p>
+</div>
+</div>
+<div class="mb-6 bg-gray-900 rounded shadow-md overflow-hidden" x-data="{open: false}">
+<div class="p-6 cursor-pointer flex justify-between items-center" onclick="this.parentElement.classList.toggle('active'); this.nextElementSibling.classList.toggle('hidden')">
+<h3 class="font-semibold text-lg text-primary">Какие штрафы грозят за нарушение требований охраны труда?</h3>
+<i class="ri-arrow-down-s-line text-primary text-primary transition-transform duration-300"></i>
+</div>
+<div class="p-6 pt-0 border-t hidden">
+<p class="text-gray-300">За нарушение требований охраны труда предусмотрена административная ответственность по ст. 5.27.1 КоАП РФ. Штрафы для должностных лиц составляют от 2 000 до 40 000 рублей, для юридических лиц — от 50 000 до 600 000 рублей в зависимости от характера нарушения. При повторном нарушении штрафы увеличиваются, возможна дисквалификация должностных лиц или приостановление деятельности организации на срок до 90 суток. В случае причинения тяжкого вреда здоровью или смерти работника возможна уголовная ответственность.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Контакты -->
+<section id="contacts" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl text-primary font-bold mb-4">Свяжитесь с нами</h2>
+<p class="text-gray-300 max-w-3xl mx-auto">Готовы обсудить ваш проект? Оставьте заявку, и наши специалисты свяжутся с вами в ближайшее время</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2 bg-gray-800 rounded shadow-md p-8">
+<h3 class="text-2xl text-primary font-semibold mb-6">Оставить заявку</h3>
+<form id="contactForm">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+            <label for="name" class="block text-gray-300 mb-2">Имя</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
+        </div>
+        <div>
+            <label for="company" class="block text-gray-300 mb-2">Компания</label>
+            <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
+        </div>
+        <div>
+            <label for="email" class="block text-gray-300 mb-2">Email *</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary" required>
+        </div>
+        <div>
+            <label for="phone" class="block text-gray-300 mb-2">Телефон *</label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary" required>
+        </div>
+    </div>
+    <div class="mb-6">
+        <label for="service" class="block text-gray-300 mb-2">Интересующая услуга</label>
+        <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-primary pr-8">
+            <option value="">Выберите услугу</option>
+            <option value="sout">Специальная оценка условий труда</option>
+            <option value="training">Обучение по охране труда</option>
+            <option value="docs">Разработка документации</option>
+            <option value="risks">Оценка профессиональных рисков</option>
+            <option value="audit">Аудит системы охраны труда</option>
+            <option value="control">Производственный контроль</option>
+            <option value="other">Другое</option>
+        </select>
+    </div>
+    <div class="mb-6">
+        <label for="message" class="block text-gray-300 mb-2">Сообщение</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"></textarea>
+    </div>
+    <div class="mb-6 flex items-start">
+        <input type="checkbox" id="agreement" name="agreement" class="custom-checkbox mr-3 mt-1" required>
+        <label for="agreement" class="text-gray-300 text-sm">Я согласен на обработку персональных данных в соответствии с <a href="#" class="text-primary hover:underline">Политикой конфиденциальности</a></label>
+    </div>
+    <button type="submit" class="bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Отправить заявку</button>
+</form>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Предотвратить перезагрузку страницы при отправке формы
+    
+        // Проверяем, что согласие на обработку персональных данных отмечено
+        if (!document.getElementById('agreement').checked) {
+            alert("Необходимо согласие на обработку персональных данных");
+            return; // Прерываем отправку, если чекбокс не выбран
+        }
+    
+        // Создаём объект FormData для отправки данных с формы
+        const formData = new FormData(this);
+    
+        // Отправляем запрос на сервер с помощью Fetch API
+        fetch('send_request.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Ожидаем JSON-ответ от сервера
+        .then(data => {
+            alert(data.message); // Показываем сообщение пользователю
+            if (data.status === 'success') {
+                this.reset(); // Очищаем форму после успешной отправки
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Произошла ошибка при отправке формы.');
+        });
+    });
+    </script>    
+</div>
+<div class="w-full lg:w-1/2">
+<div class="h-64 md:h-96 mb-6 rounded overflow-hidden shadow-md" style="background-image: url('../images/mesto.png'); background-size: cover; background-position: center;"></div>
+<div class="bg-gray-800 rounded shadow-md p-8">
+<h3 class="text-2xl text-primary font-semibold mb-6">Контактная информация</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 mr-4 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Адрес</h4>
+<p class="text-gray-300">123456, г. Ставрполь, ул. Доватоцев, д. 66 </p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 mr-4 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Телефон</h4>
+<p class="text-gray-300">+7 (934) 080-86-06</p>
+<p class="text-gray-300">+7 (903) 826-56-93</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 mr-4 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Email</h4>
+<p class="text-gray-300">vgo5podin@yandex.ru</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 mr-4 mt-1">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Время работы</h4>
+<p class="text-gray-300">Пн-Пт: 9:00 - 18:00</p>
+<p class="text-gray-300">Сб-Вс: выходные</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4 text-primary">Мы в социальных сетях</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+<i class="ri-telegram-fill text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+<i class="ri-vk-fill text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+<i class="ri-youtube-fill text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+<i class="ri-whatsapp-fill text-primary"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Подписка на рассылку -->
+<section class="py-16 bg-primary">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-4 text-white">Подпишитесь на нашу рассылку</h2>
+<p class="text-white/80 mb-8">Получайте актуальную информацию об изменениях в законодательстве и полезные материалы по охране труда</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input type="email" placeholder="Ваш email" class="flex-grow px-4 py-3 rounded-button border-none focus:outline-none focus:ring-2 focus:ring-white/30 bg-gray-700 text-gray-100">
+<button type="submit" class="bg-white text-primary py-3 px-6 rounded-button font-medium hover:bg-white/90 transition-colors whitespace-nowrap">Подписаться</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">ЭкоТрудСервис</a>
+<p class="text-gray-400 mb-6">Профессиональная оценка и улучшение условий труда на предприятиях с 2010 года</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<i class="ri-telegram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<i class="ri-vk-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<i class="ri-youtube-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<i class="ri-whatsapp-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg text-primary font-semibold mb-6">Услуги</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Специальная оценка условий труда</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Обучение по охране труда</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Разработка документации</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Оценка профессиональных рисков</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Аудит системы охраны труда</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Производственный контроль</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg text-primary font-semibold mb-6">Компания</h3>
+<ul class="space-y-3">
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+<li><a href="#cases" class="text-gray-400 hover:text-white transition-colors">Наши проекты</a></li>
+<li><a href="#blog" class="text-gray-400 hover:text-white transition-colors">Блог</a></li>
+<li><a href="#otziv" class="text-gray-400 hover:text-white transition-colors">Отзывы</a></li>
+<li><a href="#contacts" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg text-primary font-semibold mb-6">Контакты</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span class="text-gray-400">123456, г. Ставрополь, ул. Доваторцев, д. 66 </span>
+</li>
+<li class="flex items-start">
+<i class="ri-phone-line mr-3 mt-1"></i>
+<span class="text-gray-400">+7 (934) 080-86-06</span>
+</li>
+<li class="flex items-start">
+<i class="ri-mail-line mr-3 mt-1"></i>
+<span class="text-gray-400">vgo5podin@yandex.ru</span>
+</li>
+<li class="flex items-start">
+<i class="ri-time-line mr-3 mt-1"></i>
+<span class="text-gray-400">Пн-Пт: 9:00 - 18:00</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 ЭкоТрудСервис. Все права защищены.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Пользовательское соглашение</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Карта сайта</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Мобильное меню
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// FAQ аккордеон
+document.querySelectorAll('.cursor-pointer').forEach(item => {
+item.addEventListener('click', function() {
+const icon = this.querySelector('i');
+if (this.parentElement.classList.contains('active')) {
+icon.style.transform = 'rotate(0deg)';
+} else {
+icon.style.transform = 'rotate(180deg)';
+}
+});
+});
+// Плавная прокрутка к якорям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Закрыть мобильное меню при клике на ссылку
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+// Фиксированное меню при прокрутке
+const header = document.querySelector('header');
+const headerHeight = header.offsetHeight;
+window.addEventListener('scroll', function() {
+if (window.scrollY > headerHeight) {
+header.classList.add('shadow-lg');
+} else {
+header.classList.remove('shadow-lg');
+}
+});
+});
+</script>
+</body>
+</html>
